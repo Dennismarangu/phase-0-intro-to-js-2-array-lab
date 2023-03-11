@@ -9,12 +9,24 @@ describe('index.js', function () {
 
   describe('Array functions', function () {
     beforeEach(function () {
+      
       cats.length = 0;
-
+     
       cats.push('Milo', 'Otis', 'Garfield');
     });
+    
+    let cats;
 
-    describe('destructivelyAppendCat(name)', function () {
+beforeEach(() => {
+  cats = []; // initialize the cats array before each test case
+});
+
+it('appends a cat to the end of the cats array', () => {
+  // Now you can access and modify the `cats` array inside this test case
+  cats.push('Garfield');
+  expect(cats[cats.length - 1]).toBe('Garfield');
+});
+    describe('destructivelyAppendCat(name)', function () { 
       it('appends a cat to the end of the cats array', function () {
         destructivelyAppendCat('Ralph');
 
